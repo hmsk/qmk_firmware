@@ -29,7 +29,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *   |  L1  | Left |  Up  | LAlt | LGui |                                       |   [  |   ]  | Down | Right| ~L1  |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
- *                                        | App  | LGui |       | Alt  |Ctrl/Esc|
+ *                                        | App  | LGui |       | LANG1| LANG2|
  *                                 ,------|------|------|       |------+--------+------.
  *                                 |      |      | Home |       | PgUp |        |      |
  *                                 | Space|Backsp|------|       |------|  Tab   |Enter |
@@ -54,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                       KC_H,   KC_J,  KC_K,    KC_L,   LT(MDIA, KC_SCLN),  KC_ENT,
         LGUI(KC_SPC), KC_N,   KC_M,  KC_COMM, KC_DOT, CTL_T(KC_SLSH),     KC_RSFT,
                              KC_LBRC, KC_RBRC,KC_DOWN,KC_RIGHT,           LT(SYMB,KC_TRNS),
-        KC_LALT,  CTL_T(KC_ESC),
+        KC_LANG1, KC_LANG2,
         KC_PGUP,
         KC_QUOT,  KC_TAB, KC_ENT
     ),
