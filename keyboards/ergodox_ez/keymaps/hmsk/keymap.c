@@ -63,13 +63,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,---------------------------------------------------.           ,--------------------------------------------------.
  * |Version  |  F1  |  F2  |  F3  |  F4  |  F5  |      |           |      |  F6  |  F7  |  F8  |  F9  |  F10 |   F11  |
  * |---------+------+------+------+------+------+------|           |------+------+------+------+------+------+--------|
- * |         |   !  |   @  |   {  |   }  |   |  |      |           |      |   7  |   8  |   9  |   *  |      |   F12  |
+ * |         |   !  |   @  |   {  |   }  |   |  |      |           |      |   7  |   8  |   9  |   *  |   +  |   F12  |
  * |---------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |         |   #  |   $  |   (  |   )  |   `  |------|           |------|   4  |   5  |   6  |   +  |      |        |
+ * |         |   #  |   $  |   (  |   )  |   `  |------|           |------|   4  |   5  |   6  |  Up  |      |        |
  * |---------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |         |   %  |   ^  |   [  |   ]  |   ~  |      |           |      |   1  |   2  |   3  |  Up  |   \  |        |
+ * |         |   %  |   ^  |   [  |   ]  |   ~  |      |           |      |   1  |   2  | Left |      | Right|        |
  * `---------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   | EPRM  |      |      |      |      |                                       |      | Left | Down | Right|      |
+ *   | EPRM  |      |      |      |      |                                       |      |      | Down |      |      |
  *   `-----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
  *                                        |Animat|      |       |Toggle|Solid |
@@ -92,10 +92,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                     RGB_VAD,  RGB_VAI,  KC_TRNS,
        // right hand
        KC_TRNS, KC_F6,  KC_F7,    KC_F8,   KC_F9,   KC_F10,   KC_F11,
-       KC_TRNS, KC_7,   KC_8,     KC_9,    KC_ASTR, KC_TRNS,  KC_F12,
-                KC_4,   KC_5,     KC_6,    KC_PLUS, KC_TRNS,  KC_TRNS,
-       KC_TRNS, KC_1,   KC_2,     KC_3,    KC_UP,   KC_BSLS,  KC_TRNS,
-                        KC_TRNS,  KC_LEFT, KC_DOWN, KC_RIGHT, KC_TRNS,
+       KC_TRNS, KC_7,   KC_8,     KC_9,    KC_ASTR, KC_PLUS,  KC_F12,
+                KC_4,   KC_5,     KC_6,    KC_UP,   KC_TRNS,  KC_TRNS,
+       KC_TRNS, KC_1,   KC_2,     KC_LEFT, KC_TRNS, KC_RIGHT, KC_TRNS,
+                        KC_TRNS,  KC_TRNS, KC_DOWN, KC_TRNS,  KC_TRNS,
        RGB_TOG, RGB_SLD,
        KC_TRNS,
        KC_MUTE, KC_VOLD, KC_VOLU
