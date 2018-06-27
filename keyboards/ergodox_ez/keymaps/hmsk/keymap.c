@@ -67,7 +67,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |---------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
  * |         |   #  |   $  |   (  |   )  |   `  |------|           |------|   4  |   5  |   6  |  Up  |      |        |
  * |---------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |         |   %  |   ^  |   [  |   ]  |   ~  |      |           |      |   1  |   2  | Left |      | Right|        |
+ * |         |   %  |   ^  |   [  |   ]  |   ~  |      |           |      |   1  |   2  | Left | Down | Right|        |
  * `---------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
  *   | EPRM  | Left |  Up  | Right| Down |                                       |      |      | Down |      |      |
  *   `-----------------------------------'                                       `----------------------------------'
@@ -94,7 +94,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_TRNS, KC_F6,  KC_F7,    KC_F8,   KC_F9,   KC_F10,   KC_F11,
        KC_TRNS, KC_7,   KC_8,     KC_9,    KC_ASTR, KC_PLUS,  KC_F12,
                 KC_4,   KC_5,     KC_6,    KC_UP,   KC_TRNS,  KC_TRNS,
-       KC_TRNS, KC_1,   KC_2,     KC_LEFT, KC_NO,   KC_RIGHT, KC_TRNS,
+       KC_TRNS, KC_1,   KC_2,     KC_LEFT, KC_DOWN,   KC_RIGHT, KC_TRNS,
                         KC_TRNS,  KC_TRNS, KC_DOWN, KC_TRNS,  KC_TRNS,
        RGB_TOG, RGB_SLD,
        KC_TRNS,
