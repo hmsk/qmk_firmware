@@ -13,12 +13,23 @@ extern keymap_config_t keymap_config;
 enum custom_keycodes {
   QWERTY = SAFE_RANGE,
   NAV,
-
+  MY_EMAIL
 };
 
 // Fillers to make layering more clear
 #define _______ KC_TRNS
 #define XXXXXXX KC_NO
+
+//Tap Dance Declarations
+enum {
+  TD_LANG = 0
+};
+
+//Tap Dance Definitions
+qk_tap_dance_action_t tap_dance_actions[] = {
+  //Tap once for Space, twice for Cmd+Space
+ [TD_LANG] = ACTION_TAP_DANCE_DOUBLE (KC_SPC, LGUI(KC_SPC))
+};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -40,7 +51,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,   KC_Q,    KC_W,    KC_E,    KC_R,     KC_T,                      KC_Y,     KC_U,     KC_I,    KC_O,    KC_P,    KC_BSLS, \
     KC_LCTL,  KC_A,    KC_S,    KC_D,    KC_F,     KC_G,                      KC_H,     KC_J,     KC_K,    KC_L,    KC_SCLN, KC_QUOT, \
     KC_LSFT,  KC_Z,    KC_X,    KC_C,    KC_V,     KC_B,                      KC_N,     KC_M,     KC_COMM, KC_DOT,  KC_SLSH, KC_RSHIFT,  \
-    MO(_NAV), RGB_TOG, KC_LCTL, KC_LALT, KC_LGUI, KC_SPC,  KC_BSPC,  KC_SPC,  KC_ENT,   KC_LBRC,  KC_RBRC, KC_EQL,  KC_PGUP, MO(_NAV) \
+    MO(_NAV), RGB_TOG, KC_LCTL, KC_LALT, KC_LGUI, KC_SPC,  KC_BSPC,  TD(TD_LANG),  KC_ENT,   KC_LBRC,  KC_RBRC, KC_EQL,  KC_PGUP, MO(_NAV) \
   ),
 
   /* NAV
@@ -60,7 +71,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_GRV,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                     KC_F6,             KC_F7,    KC_F8,   KC_F9,  KC_F10,  KC_F11,  \
     _______, RGB_SAI, RGB_SAD, _______, RESET,   _______,                   KC_PGUP,           _______,  _______, _______, KC_INS,  KC_HOME, \
     _______, RGB_HUI, RGB_VAI, KC_PGDN, _______, _______,                   KC_LEFT,           KC_DOWN,  KC_UP,   KC_RGHT, KC_DEL,  KC_END,  \
-    KC_LSFT, RGB_HUD, RGB_VAD, _______, _______, _______,                   MAGIC_TOGGLE_NKRO, _______,  _______, KC_MPLY, KC_MPRV, KC_MNXT, \
+    KC_LSFT, RGB_HUD, RGB_VAD, _______, _______, _______,                   MAGIC_TOGGLE_NKRO, MY_EMAIL,  _______, KC_MPLY, KC_MPRV, KC_MNXT, \
     _______, KC_LGUI, KC_LALT, _______, _______, RGB_RMOD, RGB_MOD, RGB_M_T, RGB_M_P,           KC_VOLD,  KC_VOLD, KC_MUTE, _______, _______ \
   ),
 
@@ -85,6 +96,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         #endif
         persistant_default_layer_set(1UL<<_QWERTY);
       }
+      return false;
+      break;
+    case MY_EMAIL:
+      SEND_STRING("k.hamasaki@gmail.com");
       return false;
       break;
     //case COLEMAK:
