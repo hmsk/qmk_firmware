@@ -1,7 +1,8 @@
 RGBLIGHT_ENABLE = yes
 BACKLIGHT_ENABLE = no
+NKRO_ENABLE = yes
+KEY_LOCK_ENABLE = yes
 TAP_DANCE_ENABLE = yes
-
-ifndef QUANTUM_DIR
-	include ../../../../Makefile
-endif
+CONSOLE_ENABLE = no
+MOUSEKEY_ENABLE  = no
+#EXTRAFLAGS += -flto -DUSE_Link_Time_Optimization
