@@ -12,7 +12,9 @@ extern keymap_config_t keymap_config;
 enum custom_keycodes {
   QWERTY = SAFE_RANGE,
   NAV,
-  MY_EMAIL
+  MY_EMAIL,
+  MY_NPM,
+  MY_YARN
 };
 
 // Fillers to make layering more clear
@@ -67,11 +69,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * `------------------------------------------------''-----------------------------------------------'
    */
   [_NAV] = LAYOUT( \
-    KC_GRV,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                     KC_F6,             KC_F7,    KC_F8,   KC_F9,  KC_F10,  KC_F11,  \
-    _______, RGB_SAI, RGB_SAD, _______, RESET,   _______,                   KC_PGUP,           _______,  _______, _______, KC_INS,  KC_HOME, \
-    _______, RGB_HUI, RGB_VAI, KC_PGDN, _______, _______,                   KC_LEFT,           KC_DOWN,  KC_UP,   KC_RGHT, KC_DEL,  KC_END,  \
-    KC_LSFT, RGB_HUD, RGB_VAD, _______, _______, _______,                   MAGIC_TOGGLE_NKRO, MY_EMAIL,  _______, KC_MPLY, KC_MPRV, KC_MNXT, \
-    _______, KC_LGUI, KC_LALT, _______, _______, RGB_RMOD, RGB_MOD, RGB_M_T, RGB_M_P,           KC_VOLD,  KC_VOLD, KC_MUTE, _______, _______ \
+    KC_GRV,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                     KC_F6,    KC_F7,    KC_F8,   KC_F9,   KC_F10,  KC_F11,  \
+    _______, RGB_SAI, RGB_SAD, _______, RESET,   _______,                   MY_YARN,  KC_PGUP,  _______, _______, KC_INS,  KC_HOME, \
+    _______, RGB_HUI, RGB_VAI, KC_PGDN, _______, _______,                   KC_LEFT,  KC_DOWN,  KC_UP,   KC_RGHT, KC_DEL,  KC_END,  \
+    KC_LSFT, RGB_HUD, RGB_VAD, _______, _______, _______,                   MY_NPM,   MY_EMAIL, _______, KC_MPLY, KC_MPRV, KC_MNXT, \
+    _______, KC_LGUI, KC_LALT, _______, _______, RGB_RMOD, RGB_MOD, RGB_M_T, RGB_M_P, KC_VOLD,  KC_VOLD, KC_MUTE, _______, _______ \
   ),
 
 };
@@ -98,9 +100,24 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       return false;
       break;
     case MY_EMAIL:
-      SEND_STRING("k.hamasaki@gmail.com");
+      if (record->event.pressed) {
+        SEND_STRING("k.hamasaki@gmail.com");
+      }
       return false;
       break;
+    case MY_NPM:
+      if (record->event.pressed) {
+        SEND_STRING("npm run ");
+      }
+      return false;
+      break;
+    case MY_YARN:
+      if (record->event.pressed) {
+        SEND_STRING("yarn run ");
+      }
+      return false;
+      break;
+
     //case COLEMAK:
       //if (record->event.pressed) {
         //#ifdef AUDIO_ENABLE
