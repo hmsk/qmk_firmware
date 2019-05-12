@@ -67,8 +67,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define RGB_DI_PIN D3
 #define RGBLIGHT_ANIMATIONS
 #define RGBLED_NUM 20
-#define RGBLIGHT_SPLIT
-#define RGBLED_SPLIT { 10, 10 }    // Number of LEDs
+//#define RGBLIGHT_SPLIT
+//#define RGBLED_SPLIT { 10, 10 }    // Number of LEDs
 
 #define SOFT_SERIAL_PIN D0
 #define SELECT_SOFT_SERIAL_SPEED 1
