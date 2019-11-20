@@ -1,6 +1,7 @@
 .dep
 *.o
 *.bin
+*.zip
 *.eep
 *.elf
 *.hex

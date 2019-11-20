@@ -1,5 +1,5 @@
-FROM debian:jessie
-MAINTAINER Erik Dasque <erik@frenchguys.com>
+FROM debian:9
+MAINTAINER Kengo Hamasaki <k.hamasaki@gmail.com>
 
 RUN apt-get update && apt-get install --no-install-recommends -y build-essential \
     gcc \
@@ -17,12 +17,21 @@ RUN apt-get update && apt-get install --no-install-recommends -y build-essential
     git \
     software-properties-common \
     avrdude \
+    python \
+    python-pip \
+    python-setuptools \
     && rm -rf /var/lib/apt/lists/*
 
-ENV keyboard=ergodox
-ENV subproject=ez
-ENV keymap=default
+RUN pip install wheel nrfutil
+
+ENV NRFSDK15_ROOT /tmp/nRF5_SDK_15.0.0_a53641a
+ENV keyboard ergo42_ble/master
+ENV keymap default
 
 VOLUME /qmk
 WORKDIR /qmk
-CMD make clean ; make keyboard=${keyboard} subproject=${subproject} keymap=${keymap}
+COPY . .
+
+RUN wget https://developer.nordicsemi.com/nRF5_SDK/nRF5_SDK_v15.x.x/nRF5_SDK_15.0.0_a53641a.zip -P /tmp/ && unzip /tmp/nRF5_SDK_15.0.0_a53641a.zip -d /tmp/
+
+CMD make clean; export target=`echo ${keyboard} | sed -e "s/\//_/"`_${keymap}.zip && make ${keyboard}:${keymap}:${target}
