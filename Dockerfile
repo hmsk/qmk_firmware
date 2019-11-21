@@ -34,4 +34,4 @@ COPY . .
 
 RUN wget https://developer.nordicsemi.com/nRF5_SDK/nRF5_SDK_v15.x.x/nRF5_SDK_15.0.0_a53641a.zip -P /tmp/ && unzip /tmp/nRF5_SDK_15.0.0_a53641a.zip -d /tmp/
 
-CMD make clean; export target=`echo ${keyboard} | sed -e "s/\//_/"`_${keymap} && make ${keyboard}:${keymap}:${target}.zip && rm ${target}.bin
+CMD make clean; export target=`echo ${keyboard} | sed -e "s/\//_/"`_${keymap} && make ${keyboard}:${keymap}:${target}.zip
