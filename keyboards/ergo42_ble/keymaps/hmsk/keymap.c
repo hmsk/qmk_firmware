@@ -93,14 +93,14 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |---------+------+------+------+------+------+------|   |------|------+------+------+------+------+------|
    * | Shift   |      |      |      |      |      |      |   |      |      |      |      |      |   ?  |Shift |
    * |---------+------+------+------+------+------+------|   |------+------+------+------+------+------+------|
-   * |         |      |      |      |      |  Cmd |BSpace|   |      | Enter|      |      |PgDown| PgUp |      |
+   * |         |      |      |      |  Cmd |      |BSpace|   |      | Enter|      |      |PgDown| PgUp |      |
    * '---------------------------------------------------'   '------------------------------------------------'
    */
   [_META] = LAYOUT( \
     KC_GRV,       KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_5,    KC_6,     KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, \
     LCTL(KC_TAB), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LEFT,  KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX, KC_EQL, \
     KC_LSFT,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, KC_QUES, KC_RSFT, \
-    _______,      _______, XXXXXXX, XXXXXXX, XXXXXXX, KC_LGUI, KC_BSPC, _______, KC_ENTER, XXXXXXX, XXXXXXX, KC_PGDN, KC_PGUP, _______ \
+    _______,      _______, KC_LALT, KC_LALT, KC_LGUI, XXXXXXX, KC_BSPC, _______, KC_ENTER, XXXXXXX, XXXXXXX, KC_PGDN, KC_PGUP, _______ \
   ),
 
   /* SYMB
@@ -111,14 +111,14 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |------+------+------+------+------+------+------|   |------|------+------+------+------+------+------|
    * |      |      |      |      |      |      |      |   |      |      |      |   <  |   >  |   ?  |  \   |
    * |------+------+------+------+------+------+------|   |------+------+------+------+------+------+------|
-   * |      |      |      |      |      |      |      |   |      |      |      |      |      |      |      |
+   * |      |      |      |      |  Cmd |      |      |   |      |      |      |      |      |      |      |
    * `------------------------------------------------'   `------------------------------------------------'
    */
   [_SYMB] = LAYOUT( \
     S(KC_GRV), S(KC_1), S(KC_2), S(KC_3), S(KC_4), S(KC_5), S(KC_6), S(KC_5), S(KC_6), S(KC_7), S(KC_8),    S(KC_9),   S(KC_0),    S(KC_BSLS), \
     XXXXXXX,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX,   S(KC_SCLN), S(KC_QUOT), \
     XXXXXXX,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, S(KC_COMM), S(KC_DOT), S(KC_SLSH), KC_RSFT, \
-    _______,   _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX,   XXXXXXX,    _______ \
+    _______,   _______, XXXXXXX, XXXXXXX, KC_LGUI, XXXXXXX, XXXXXXX, _______, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX,   XXXXXXX,    _______ \
   ),
 
   /* CONF
