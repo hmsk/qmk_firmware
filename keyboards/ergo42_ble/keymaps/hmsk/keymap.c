@@ -75,14 +75,14 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |---------+------+------+------+------+------+------|   |------+------+------+------+------+------+------|
    * | Shift   |   Z  |   X  |   C  |   V  |   B  | KANA |   | KANA |   N  |   M  |   ,  |   .  |   /  |Shift |
    * |---------+------+------+------+------+------+------|   |------+------+------+------+------+------+------|
-   * | META    | CONF |  Alt |  Alt |  Cmd | Space|BSpace|   | SYMB | Enter|   [  |   ]  |VolDwn| VolUp| META |
+   * | META    | CONF |  Alt |  Alt |  Cmd | Space|BSpace|   | Enter|   [  |   ]  | SYMB |VolDwn| VolUp| META |
    * '---------------------------------------------------'   '------------------------------------------------'
    */
   [_QWERTY] = LAYOUT( \
     KC_ESC,         KC_Q, KC_W,    KC_E,    KC_R,    KC_T,   KC_Y,    KC_T,  KC_Y,     KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS, \
     LCTL_T(KC_TAB), KC_A, KC_S,    KC_D,    KC_F,    KC_G,   SCREEN,  EMOJI, KC_H,     KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, \
     KC_LSFT,        KC_Z, KC_X,    KC_C,    KC_V,    KC_B,   KANA,    KANA,  KC_N,     KC_M,    KC_COMM, KC_DOT,  KC_SLSH, SFT_T(KC_RO), \
-    META,           CONF, KC_LALT, KC_LALT, KC_LGUI, KC_SPC, KC_BSPC, SYMB,  KC_ENTER, KC_LBRC, KC_RBRC, KC_VOLD, KC_VOLU, META \
+    META,           CONF, KC_LALT, KC_LALT, KC_LGUI, KC_SPC, KC_BSPC, KC_ENTER, KC_LBRC, KC_RBRC, SYMB, KC_VOLD, KC_VOLU, META \
   ),
 
   /* META
@@ -93,14 +93,14 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |---------+------+------+------+------+------+------|   |------|------+------+------+------+------+------|
    * | Shift   |      |      |      |      |      |      |   |      |      |      |      |      |   ?  |Shift |
    * |---------+------+------+------+------+------+------|   |------+------+------+------+------+------+------|
-   * |         |      |      |      |  Cmd |      |BSpace|   |      | Enter|      |      |PgDown| PgUp |      |
+   * |         |      |      |      |  Cmd |      |BSpace|   | Enter|      |      |      |PgDown| PgUp |      |
    * '---------------------------------------------------'   '------------------------------------------------'
    */
   [_META] = LAYOUT( \
-    KC_GRV,       KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_5,    KC_6,     KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, \
-    LCTL(KC_TAB), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LEFT,  KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX, KC_EQL, \
-    KC_LSFT,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, KC_QUES, KC_RSFT, \
-    _______,      _______, KC_LALT, KC_LALT, KC_LGUI, XXXXXXX, KC_BSPC, _______, KC_ENTER, XXXXXXX, XXXXXXX, KC_PGDN, KC_PGUP, _______ \
+    KC_GRV,       KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_5,     KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, \
+    LCTL(KC_TAB), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX, KC_EQL, \
+    KC_LSFT,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_QUES, KC_RSFT, \
+    _______,      _______, KC_LALT, KC_LALT, KC_LGUI, XXXXXXX, KC_BSPC, KC_ENTER, XXXXXXX, XXXXXXX, _______, KC_PGDN, KC_PGUP, _______ \
   ),
 
   /* SYMB
@@ -118,7 +118,7 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     S(KC_GRV), S(KC_1), S(KC_2), S(KC_3), S(KC_4), S(KC_5), S(KC_6), S(KC_5), S(KC_6), S(KC_7), S(KC_8),    S(KC_9),   S(KC_0),    S(KC_BSLS), \
     XXXXXXX,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX,   S(KC_SCLN), S(KC_QUOT), \
     XXXXXXX,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, S(KC_COMM), S(KC_DOT), S(KC_SLSH), KC_RSFT, \
-    _______,   _______, XXXXXXX, XXXXXXX, KC_LGUI, XXXXXXX, XXXXXXX, _______, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX,   XXXXXXX,    _______ \
+    _______,   _______, XXXXXXX, XXXXXXX, KC_LGUI, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,    XXXXXXX,   XXXXXXX,    _______ \
   ),
 
   /* CONF
@@ -136,7 +136,7 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    AD_WO_L, ADV_ID1, ADV_ID2, ADV_ID3,  ADV_ID4, ENT_SLP,  ENT_DFU,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, ADV_ID0,  XXXXXXX, \
    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, USB_DIS,  USB_EN,       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX,  XXXXXXX, \
    BATT_LV, DEL_ID1, DEL_ID2, DEL_ID3,  DEL_ID4, BLE_DIS,  BLE_EN,       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, DEL_ID0,  XXXXXXX, \
-   _______, _______, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX,  XXXXXXX,      _______, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX,  _______  \
+   _______, _______, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX,  XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, _______,  XXXXXXX, XXXXXXX,  _______  \
   ),
 };
 
